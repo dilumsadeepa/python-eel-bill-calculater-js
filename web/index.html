@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title is the app -->
+    <title>Billing System</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="form-group">
+            <label for="item">No of Items</label>
+            <input type="text" class="form-control" placeholder="Enter No of Items" id="item">
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" placeholder="Enter price" id="price">
+          </div>
+
+          <button type="button" name="button" class="btn btn-info" onclick="bill()">ADD</button>
+
+          <button type="button" name="button2" class="btn btn-info" onclick="cl()">Clear</button>
+
+        </div>
+
+        <div class="col-sm-1">
+
+        </div>
+
+        <div class="col-sm-5"s>
+          <h3>Total is : </h3> <h3 id="total-dis"></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+
+      var total = 0;
+
+      function bill() {
+        var count = 0;
+        var item = document.getElementById('item').value;
+        var price = document.getElementById('price').value;
+
+        count = item * price;
+
+        total = total + count;
+
+        document.getElementById('total-dis').innerHTML=total;
+
+        document.getElementById('item').value = "";
+        document.getElementById('price').value = "";
+
+
+      }
+
+      function cl() {
+        var total = 0;
+        document.getElementById('total-dis').innerHTML=total;
+      }
+
+
+    </script>
+
+
+
+  </body>
+</html>
